@@ -22,10 +22,6 @@ header {
     background-color: #008BFF;
 }
 
-.logo {
-    cursor: pointer;
-}
-
 .nav_links {
     list-styles: none;
 }
@@ -40,7 +36,7 @@ header {
 }
 
 .nav_links li a:hover {
-    color: #0088A9;
+    color: rgb(51, 238, 76);
 }
 
 .right li a button {
@@ -52,10 +48,10 @@ header {
 }
 
 .right button:hover {
-    background-color: rgba(36, 37, 42, 0);
+    background-color: rgb(51, 238, 76);
 }
 
-nav {
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -79,17 +75,24 @@ nav {
 }
 
 .weblinks li a button {
-    padding: 9px 25px;
+    display: inline-block;
+    padding: 25px;
     background: rgb(51, 238, 76);
-    border-radius: 50px;
+    border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
+    height: 125px;
+    width: 125px;
 }
 
 .weblinks button:hover {
     background-color: rgba(255, 255, 255, 0);
 }
 
+.home_nav {
+    height: 300px;
+    position: relative;
+}
 
 
 
@@ -98,6 +101,7 @@ nav {
 
 
 
-.extra {
+
+.block {
     padding: 30px 10%;
 }
