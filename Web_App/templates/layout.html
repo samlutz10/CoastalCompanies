@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}" />
+
+    {% if title %}
+        <title>Voyager Management - {{ title }}</title>
+    {% else %}
+        <title>Voyager Management</title>
+    {% endif %}
+    
+</head>
+<body>
+
+    <header>
+        <img class="logo" src="{{ url_for('static', filename='logo.png') }}" alt="logo" width="100px" height="100px" />
+    
+        <nav>
+            <ul class="nav_links">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/training_hub">Training Hub</a></li>
+            </ul>
+        </nav>
+        <a class="cta" href="#"><button>Login</button></a>
+    </header>
+    
+    
+    <div>
+        {% block content %}{% endblock %}
+    </div>
+    
+</body>
+</html>
