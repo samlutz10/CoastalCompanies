@@ -43,7 +43,7 @@ header {
     color: #0088A9;
 }
 
-button {
+.right li a button {
     padding: 9px 25px;
     background: rgba(36, 37, 42, 1);
     border-radius: 50px;
@@ -51,6 +51,53 @@ button {
     transition: all 0.3s ease 0s;
 }
 
-button:hover {
+.right button:hover {
     background-color: rgba(36, 37, 42, 0);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.weblinks {
+    list-styles: none;
+}
+
+.weblinks li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.weblinks li a {
+    transition: all 0.3s ease 0s;
+}
+
+.weblink li a {
+    color: black;
+}
+
+.weblinks li a button {
+    padding: 9px 25px;
+    background: rgb(51, 238, 76);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.weblinks button:hover {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+
+
+
+
+
+
+
+
+.extra {
+    padding: 30px 10%;
 }

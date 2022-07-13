@@ -16,19 +16,24 @@
 <body>
 
     <header>
-        <img class="logo" src="{{ url_for('static', filename='logo.png') }}" alt="logo" width="100px" height="100px" />
+        <img class="logo" src="{{ url_for('static', filename='logo.png') }}" alt="logo" width="80px" height="80px" />
     
-        <nav>
+        <nav class="navbar">
             <ul class="nav_links">
                 <li><a href="/home">Home</a></li>
                 <li><a href="/training_hub">Training Hub</a></li>
             </ul>
         </nav>
-        <a class="cta" href="#"><button>Login</button></a>
+        <div>
+            <ul class="right">
+                <li><a class="cta" href="/login"><button>Login</button></a></li>
+                <li><a class="cta" href="/register"><button>Register</button></a></li>
+            </ul>
+        </div>
     </header>
     
     
-    <div>
+    <div class="extra">
         {% block content %}{% endblock %}
     </div>
     
