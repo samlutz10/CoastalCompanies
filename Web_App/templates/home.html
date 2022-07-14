@@ -1,15 +1,29 @@
 {% extends "layout.html" %}
 {% block content %}
     <h1>Welcome Coastal Employee!</h1>
-    <p>Look below to get started!</p>
-    <nav class="home_nav">
-        <ul class="weblinks">
-            <li><a href="https://app.qbo.intuit.com/app/login?loadCustomerAssistanceAssets=us" target="_blank"><button id="quick">QuickBooks</button></a></li>
-            <li><a href="ms-excel:ofe|u|file:///Users/samlutz10/Downloads/printform.xlsx"><button id="excel">Excel</button></a></li>
-            <li><a href="https://www.sitefotos.com/index/login/utype/1" target="_blank"><button id="site">SiteFotos</button></a></li>
-        </ul>
-    </nav>
-    <nav class="weblinks">
-        
-    </nav>
+    <p></p>
+    <div class="dash_but">
+        <button type="button" class="weblinks" onclick=" window.open('https://app.qbo.intuit.com/app/login?loadCustomerAssistanceAssets=us','_blank')">
+            <span class="button_text_">QuickBooks</span>
+            <span class="button_icon">
+                <ion-icon name="cash-outline"></ion-icon>
+            </span>
+        </button>
+        <button type="button" class="weblinks" onclick=" window.open('https://www.sitefotos.com/index/login/utype/1','_blank')">
+            <span class="button_text_">SiteFotos</span>
+            <span class="button_icon">
+                <ion-icon name="camera-outline"></ion-icon>
+            </span>
+        </button>
+        <button type="button" class="weblinks" onclick="location.href='/excel_files'">
+            <span class="button_text_">Excel Files</span>
+            <span class="button_icon">
+                <ion-icon name="calculator-outline"></ion-icon>
+            </span>
+        </button>
+    </div>
+    
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 {% endblock content %}
