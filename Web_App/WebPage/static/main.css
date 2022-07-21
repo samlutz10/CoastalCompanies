@@ -6,6 +6,10 @@
     padding: 0;
 }
 
+.extra {
+    margin-top: 20px;
+}
+
 body {
     background-color: #EDF0F1;
 }
@@ -44,7 +48,7 @@ li, a, button {
     color: rgb(51, 238, 76);
 }
 
-.right_nav li a button {
+.right_nav a button {
     padding: 9px 25px;
     background: rgba(36, 37, 42, 1);
     border-radius: 50px;
@@ -97,6 +101,37 @@ li, a, button {
     justify-content: space-between;
     align-items: center;
     margin-top: 30px;
+}
+
+.train-top {
+    background-image: url("Training.jpeg");
+    background-size: cover; 
+    height: 500px;
+    padding-top:0;
+}
+
+.train-header h1 {
+    justify-content: center;
+    display: flex;
+    line-height: 16;
+    font-size: 2.5em;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    color: black;
+}
+
+.training-list li a {
+    font-size: 1.15em;
+    list-style: none;
+    line-height: 2;
+    text-decoration: none;
+    color: #404040;
+}
+
+.side li {
+    color: #404040;
+    text-decoration: none;
+    list-style: none;
 }
 
 .block {

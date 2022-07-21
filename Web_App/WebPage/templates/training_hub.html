@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="train-top">
+        <div class="train-header">
+            <h1>Welcome to the Coastal Training Hub!</h1>
+        </div>
+    </div>
+    <div class="block">
+        <h2>All Trainings</h2>
+        <ul class="training-list">
+            <li><a href="{{ url_for('home') }}">Training 1: How to operate a truck and trailer</a></li>
+            <li><a href="{{ url_for('home') }}">Training 2: How to operate a lawn mower</a></li>
+            <li><a href="{{ url_for('home') }}">Training 3: How to operate a weed whacker</a></li>
+            <li><a href="{{ url_for('home') }}">Training 4: How to operate a blower</a></li>
+            <li><a href="{{ url_for('home') }}">Training 5: How to pick-up trash</a></li>
+            <li><a href="{{ url_for('home') }}">Training 6: How to operate a hedge trimmer</a></li>
+        </ul>
+        
+    </div>
+{% endblock content %}
