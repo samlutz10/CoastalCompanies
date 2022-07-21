@@ -134,6 +134,18 @@ li, a, button {
     list-style: none;
 }
 
+.extra {
+    background-image: url("Home\ Screen.jpeg");
+    height: 1000px;
+    background-size: cover;
+    padding-top: 0;
+}
+
+.video {
+    justify-content: center;
+    display: flex;
+}
+
 .block {
     padding: 30px 10%;
 }

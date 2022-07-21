@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="block">
+    <h2>Watch the videos below and answer the following questions!</h2>
+</div>
+<div class="video">
+    <video width="900" height="675" controls>
+        <source src={{ url_for('static', filename="Test.mp4") }} type="video/mp4">
+    </video>
+</div>
+{% endblock content %}
