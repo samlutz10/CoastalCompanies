@@ -16,6 +16,8 @@
 </head>
 <body>
 
+    {% if current_user.username == "jlutzel" or current_user.username == "Samlutz10" %}
+
     <header class="myhead">
         <img class="logo" src="{{ url_for('static', filename='logo.png') }}" alt="logo" width="80px" height="80px" />
     
@@ -24,6 +26,7 @@
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="{{ url_for('training_hub') }}">Training Hub</a></li>
                 <li><a href="{{ url_for('quick_links') }}">Quick Links</a></li>
+                <li><a href="{{ url_for('employee_list') }}">Employee List</a></li>
             </ul>
         </nav>
         <div class="right_nav">
@@ -36,7 +39,30 @@
             {% endif %}
         </div>
     </header>
+
+    {% else %}
     
+    <header class="myhead">
+        <img class="logo" src="{{ url_for('static', filename='logo.png') }}" alt="logo" width="80px" height="80px" />
+    
+        <nav class="navbar_">
+            <ul class="nav_links">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('training_hub') }}">Training Hub</a></li>
+            </ul>
+        </nav>
+        <div class="right_nav">
+            {% if current_user.is_authenticated %}
+                <a class="cta" href="{{ url_for('account') }}"><button>Account</button></a>
+                <a class="cta" href="{{ url_for('logout') }}"><button>Logout</button></a>
+            {% else %}
+                <a class="cta" href="{{ url_for('login') }}"><button>Login</button></a>
+                <a class="cta" href="{{ url_for('register') }}"><button>Register</button></a>
+            {% endif %}
+        </div>
+    </header>
+
+    {% endif %}
     
     
     <div>

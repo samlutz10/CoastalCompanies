@@ -1,3 +1,5 @@
+from ast import Str
+from wsgiref.validate import validator
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from flask_login import current_user
@@ -45,3 +47,12 @@ class UpdateAccountForm(FlaskForm):
             user = User.query.filter_by(email = email.data).first()
             if user:
                 raise ValidationError('That email is taken. Please choose a new one.')
+
+class EmployeeForm(FlaskForm):
+    name = StringField('Name', validators=[DataRequired()])
+    address = StringField('Address', validators=[DataRequired()])
+    phone_number = StringField('Phone Number', validators=[DataRequired()])
+    hire_date = StringField('Hire Date', validators=[DataRequired()])
+    license_ = StringField('License?', validators=[DataRequired()])
+    medical = StringField('Medical Card?', validators=[DataRequired()])
+    submit = SubmitField('Add')

@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="block">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Add an employee!</legend>
+            <div class="form-group">
+                {{ form.name.label(class="form-control-label") }}
+                
+                {% if form.name.errors %}
+                    {{ form.name(class="form-control form control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.name.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.name(class="form-control form control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.address.label(class="form-control-label") }}
+                
+                {% if form.address.errors %}
+                    {{ form.address(class="form-control form control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.address.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.address(class="form-control form control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.phone_number.label(class="form-control-label") }}
+                
+                {% if form.phone_number.errors %}
+                    {{ form.phone_number(class="form-control form control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.phone_number.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.phone_number(class="form-control form control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.hire_date.label(class="form-control-label") }}
+                
+                {% if form.hire_date.errors %}
+                    {{ form.hire_date(class="form-control form control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.hire_date.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.hire_date(class="form-control form control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.license_.label(class="form-control-label") }}
+                
+                {% if form.license_.errors %}
+                    {{ form.license_(class="form-control form control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.license_.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.license_(class="form-control form control-lg") }}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.medical.label(class="form-control-label") }}
+                
+                {% if form.medical.errors %}
+                    {{ form.medical(class="form-control form control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.medical.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.medical(class="form-control form control-lg") }}
+                {% endif %}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+</div>
+{% endblock content %}

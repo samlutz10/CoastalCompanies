@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="block">
+    <a href="{{ url_for('new_employee') }}">New Employee?</a>
+</div>
+<div class="block">
+    <table class="employee_table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Phone Number</th>
+                <th>Hire Date</th>
+                <th>License</th>
+                <th>Medical</th>
+            </tr>
+        </thead>
+        {% for employee in employees %}
+        <tbody>
+            <tr>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.address }}</td>
+                <td>{{ employee.phone_number }}</td>
+                <td>{{ employee.hire_date }}</td>
+                <td>{{ employee.license_ }}</td>
+                <td>{{ employee.medical }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+</div>
+{% endblock content %}

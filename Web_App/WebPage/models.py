@@ -14,3 +14,15 @@ class User(db.Model, UserMixin):
 
     def __repr__(self):
         return f"User('{self.username}', '{self.email}', '{self.image_file}')"
+
+class Employee(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    address = db.Column(db.String(100), nullable=False)
+    phone_number = db.Column(db.String(100), nullable=False)
+    hire_date = db.Column(db.String(100), nullable=False)
+    license_ = db.Column(db.String(100), nullable=False)
+    medical = db.Column(db.String(100), nullable=False)
+
+    def __repr__(self):
+        return f"Employee('{self.title}', '{self.date_posted}')"

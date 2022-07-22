@@ -146,6 +146,58 @@ li, a, button {
     display: flex;
 }
 
+.quiz_but {
+    padding: 30px 10%;
+    justify-content: center;
+    display: flex;
+}
+
+.questions {
+    padding: 30px 10%;
+    display: flex;
+}
+
+.question h2 {
+    color: #404040;
+    font-family: "Montserrat", sans-serif;
+}
+
+.answer li {
+    color: #404040;
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    list-style: none;
+}
+
 .block {
     padding: 30px 10%;
 }
+
+.employee_table {
+    width: 100%;
+    table-layout: fixed;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin: 25px 0;
+    border-radius: 10px;
+}
+
+.employee_table thead tr {
+    background-color: #3f3f3f;
+    color: #ffffff;
+    text-align: left;
+    height: 2.5em;
+}
+
+.employee_table thead tr th {
+    padding: 10px;
+}
+
+.employee_table tbody tr td {
+    padding: 10px;
+}
+
+.employee_table tbody tr:last-of-type {
+    border-bottom: 2px solid #3f3f3f;
+}
+

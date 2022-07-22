@@ -1,9 +1,10 @@
 from flask import render_template, url_for, flash, redirect, request
 from WebPage import app, db, bcrypt
-from WebPage.Forms import RegistrationForm, LoginForm, UpdateAccountForm
-from WebPage.models import User
+from WebPage.Forms import RegistrationForm, LoginForm, UpdateAccountForm, EmployeeForm
+from WebPage.models import User, Employee
 from flask_login import login_user, current_user, logout_user, login_required
 from PIL import Image
+from WebPage.quiz import PopQuiz
 import secrets
 import os
 
@@ -11,6 +12,19 @@ import os
 @app.route('/home')
 def home():
     return render_template('home.html')
+
+@app.route('/quiz', methods=['GET', 'POST'])
+@login_required
+def quiz():
+    form = PopQuiz()
+    if form.validate_on_submit():
+        return redirect(url_for('passed'))
+    return render_template('quiz.html', form=form, title='Quiz')
+
+@app.route('/passed')
+@login_required
+def passed():
+    return render_template('passed.html')
 
 @app.route('/training_hub')
 @login_required
@@ -26,6 +40,12 @@ def quick_links():
 @login_required
 def excel_files():
     return render_template('excel_files.html', title='Excel Files')
+
+@app.route('/employee_list')
+@login_required
+def employee_list():
+    employees = Employee.query.all()
+    return render_template('employee_list.html', title='Employee List', employees = employees)
 
 @app.route('/register', methods = ['GET', 'POST'])
 def register():
@@ -97,3 +117,15 @@ def account():
 @app.route('/truck_train')
 def truck_train():
     return render_template('TruckTraining.html', title='Truck')
+
+@app.route('/employee/new', methods = ['GET', 'POST'])
+@login_required
+def new_employee():
+    form = EmployeeForm()
+    if form.validate_on_submit():
+        employee = Employee(name = form.name.data, address = form.address.data, phone_number = form.phone_number.data, hire_date = form.hire_date.data, license_ = form.license_.data, medical = form.medical.data)
+        db.session.add(employee)
+        db.session.commit()
+        flash('This employee has been added!', 'success')
+        return redirect(url_for('employee_list'))
+    return render_template('create_employee.html', title='New Employee', form=form)
