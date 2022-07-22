@@ -56,3 +56,10 @@ class EmployeeForm(FlaskForm):
     license_ = StringField('License?', validators=[DataRequired()])
     medical = StringField('Medical Card?', validators=[DataRequired()])
     submit = SubmitField('Add')
+
+class ClientForm(FlaskForm):
+    name = StringField('Name', validators=[DataRequired()])
+    address = StringField('Address', validators=[DataRequired()])
+    phone_number = StringField('Phone Number', validators=[DataRequired()])
+    commercial = StringField('Commercial (Yes/No)', validators=[DataRequired()])
+    submit = SubmitField('Add')

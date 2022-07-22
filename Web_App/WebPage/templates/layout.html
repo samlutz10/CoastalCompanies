@@ -25,8 +25,7 @@
             <ul class="nav_links">
                 <li><a href="{{ url_for('home') }}">Home</a></li>
                 <li><a href="{{ url_for('training_hub') }}">Training Hub</a></li>
-                <li><a href="{{ url_for('quick_links') }}">Quick Links</a></li>
-                <li><a href="{{ url_for('employee_list') }}">Employee List</a></li>
+                <li><a href="{{ url_for('quick_links') }}">Dashboard</a></li>
             </ul>
         </nav>
         <div class="right_nav">
@@ -66,16 +65,16 @@
     
     
     <div>
-            {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if messages %}
-                    {% for category, message in messages %}
-                        <div class="alert alert-{{ category }}">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
-            {% block content %}{% endblock %}
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

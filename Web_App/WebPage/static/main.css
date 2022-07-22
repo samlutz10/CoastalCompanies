@@ -6,10 +6,6 @@
     padding: 0;
 }
 
-.extra {
-    margin-top: 20px;
-}
-
 body {
     background-color: #EDF0F1;
 }
@@ -110,6 +106,13 @@ li, a, button {
     padding-top:0;
 }
 
+.extra {
+    background-image: url("Home\ Screen.jpeg");
+    background-size: cover;
+    height: 500px;
+    padding-top: 0;
+}
+
 .train-header h1 {
     justify-content: center;
     display: flex;
@@ -118,6 +121,16 @@ li, a, button {
     font-family: "Montserrat", sans-serif;
     font-weight: 800;
     color: black;
+}
+
+.home-header h1 {
+    justify-content: left;
+    display: flex;
+    font-size: 2.5em;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 800;
+    color: black;
+    padding: 30px 10%;
 }
 
 .training-list li a {
@@ -132,13 +145,6 @@ li, a, button {
     color: #404040;
     text-decoration: none;
     list-style: none;
-}
-
-.extra {
-    background-image: url("Home\ Screen.jpeg");
-    height: 1000px;
-    background-size: cover;
-    padding-top: 0;
 }
 
 .video {

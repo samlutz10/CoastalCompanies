@@ -1,9 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="block">
-    <a href="{{ url_for('new_employee') }}">New Employee?</a>
-</div>
-<div class="block">
     <table class="employee_table">
         <thead>
             <tr>
@@ -28,5 +25,10 @@
         </tbody>
         {% endfor %}
       </table>
+</div>
+<div class="quiz_but">
+    <div class="right_nav">
+        <a class="cta" href="{{ url_for('new_employee') }}"><button>Click here to add a new employee!</button></a>
+    </div>
 </div>
 {% endblock content %}

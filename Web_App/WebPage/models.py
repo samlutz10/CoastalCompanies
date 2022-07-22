@@ -26,3 +26,13 @@ class Employee(db.Model):
 
     def __repr__(self):
         return f"Employee('{self.title}', '{self.date_posted}')"
+
+class Client(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    address = db.Column(db.String(100), nullable=False)
+    phone_number = db.Column(db.String(100), nullable=False)
+    commercial = db.Column(db.String(100), nullable=False)
+
+    def __repr__(self):
+        return f"Client('{self.title}', '{self.date_posted}')"

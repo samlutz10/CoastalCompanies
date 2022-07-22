@@ -1,7 +1,7 @@
 from flask import render_template, url_for, flash, redirect, request
 from WebPage import app, db, bcrypt
-from WebPage.Forms import RegistrationForm, LoginForm, UpdateAccountForm, EmployeeForm
-from WebPage.models import User, Employee
+from WebPage.Forms import RegistrationForm, LoginForm, UpdateAccountForm, EmployeeForm, ClientForm
+from WebPage.models import User, Employee, Client
 from flask_login import login_user, current_user, logout_user, login_required
 from PIL import Image
 from WebPage.quiz import PopQuiz
@@ -46,6 +46,12 @@ def excel_files():
 def employee_list():
     employees = Employee.query.all()
     return render_template('employee_list.html', title='Employee List', employees = employees)
+
+@app.route('/client_list')
+@login_required
+def client_list():
+    clients = Client.query.all()
+    return render_template('client_list.html', title='Client List', clients = clients)
 
 @app.route('/register', methods = ['GET', 'POST'])
 def register():
@@ -129,3 +135,15 @@ def new_employee():
         flash('This employee has been added!', 'success')
         return redirect(url_for('employee_list'))
     return render_template('create_employee.html', title='New Employee', form=form)
+
+@app.route('/client/new', methods = ['GET', 'POST'])
+@login_required
+def new_client():
+    form = ClientForm()
+    if form.validate_on_submit():
+        client = Client(name = form.name.data, address = form.address.data, phone_number = form.phone_number.data, commercial = form.commercial.data)
+        db.session.add(client)
+        db.session.commit()
+        flash('This client has been added!', 'success')
+        return redirect(url_for('client_list'))
+    return render_template('create_client.html', title='New Client', form=form)

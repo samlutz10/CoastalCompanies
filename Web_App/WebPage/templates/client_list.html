@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="block">
+    <table class="employee_table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Contact Number</th>
+                <th>Commercial</th>
+            </tr>
+        </thead>
+        {% for client in clients %}
+        <tbody>
+            <tr>
+                <td>{{ client.name }}</td>
+                <td>{{ client.address }}</td>
+                <td>{{ client.phone_number }}</td>
+                <td>{{ client.commercial }}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+      </table>
+</div>
+<div class="quiz_but">
+    <div class="right_nav">
+        <a class="cta" href="{{ url_for('new_client') }}"><button>Click here to add a new client!</button></a>
+    </div>
+</div>
+{% endblock content %}
